@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    background-color: black;
+}
+
+.frame{
+    position: relative ;
+    margin: 10% auto 0;
+    width: 50%;
+    height: 400px;
+    background-image: url('../img/camaro\ IA.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.background::before, .background::after{
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    background: linear-gradient(60deg,yellow,orange,green,violet,aqua,chartreuse,cyan,red);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation-name: animation;
+    animation-duration:20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+@keyframes animation{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+.background::after{
+    filter: blur(30px);
+}
